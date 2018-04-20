@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 //import { HEROES } from '../mock-heroes';
 import { HeroService } from '../hero.service';
-import { S_IFIFO } from 'constants';
 
 @Component({
   selector: 'app-heroes',
@@ -28,6 +27,7 @@ export class HeroesComponent implements OnInit {
   // getHeroes(): void {
   //   this.heroes = this.heroService.getHeroes();
   // }
+
   /** observable */
   getHeroes(): void {
     this.heroService.getHeroes()
@@ -46,7 +46,7 @@ export class HeroesComponent implements OnInit {
   }
   delete(hero:Hero):void{
     this.heroes= this.heroes.filter(h=> h!== hero);
-    this.heroService.updateHero(hero).subscribe();
+    this.heroService.deleteHero(hero).subscribe();
   }
 
 

@@ -14,15 +14,20 @@ import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-//--module=app tells the CLI to register it in the imports array of the AppModule.
+import { HeroSearchComponent } from './hero-search/hero-search.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeroSearchComponent
   ],
+
+  //--module=app tells the CLI to register it in the imports array of the AppModule.
   imports: [
     BrowserModule,
     FormsModule,
