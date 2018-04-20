@@ -2,26 +2,23 @@
   This is component of heroes works!
 </p>
 <h2>My Heroes</h2>
+
+<div>
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <button (click)="add(heroName.value); heroName.value=''">
+    Add
+  </button>
+</div>
+
+
 <ul class="heroes">
-  <!--used *ngFor to display a list.-->
-  <li *ngFor="let hero of heroes"
-    [class.selected]="hero === selectedHero"
-    (click)="onSelect(hero)">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button class="delete" title="delete Hero" (click)="delete(hero)">x</button>
   </li>
 </ul>
-<!--Sử dụng thẻ app-hero-detail hoặc  -->
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
 
-<!-- used *ngIf to conditionally include or exclude a block of HTML-->
-<!-- <div *ngIf="selectedHero">
-
-  <h2>{{ selectedHero.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{selectedHero.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedHero.name" placeholder="name">
-    </label>
-  </div>
-
-</div> -->
