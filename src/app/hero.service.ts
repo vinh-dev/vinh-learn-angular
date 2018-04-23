@@ -26,11 +26,12 @@ export class HeroService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) { }
+    private messageService: MessageService
+  ) { }
 
 
   /** Log a HeroService message with the MessageService */
-    private log(message: string) {
+  private log(message: string) {
     this.messageService.add('Throw message: ' + message);
   }
 
@@ -98,7 +99,7 @@ export class HeroService {
 
   /** GET heroes whose name contains search term */
 
-  searchHeroes(term:string):Observable<Hero[]>{
+  searchHeroes(term: string): Observable<Hero[]> {
     if (!term.trim()) {
       // if nor search term return empty hero array
       return of([]);
@@ -106,7 +107,7 @@ export class HeroService {
 
     return this.http.get<Hero[]>(`api/heroes/?name=${term}`).pipe(
       tap(_ => this.log(`call function searchHeroes matching${term}`)),
-      catchError(this.handleError<Hero[]>('serchHeroes',[]))
+      catchError(this.handleError<Hero[]>('serchHeroes', []))
     );
   }
 

@@ -6,6 +6,7 @@ import { HeroesComponent } from "./heroes/heroes.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 
 import { HeroDetailComponent } from "./hero-detail/hero-detail.component";
+import { FormUserComponent } from "./form-user/form-user.component";
 
 const routes: Routes = [
    // default is dashbroard
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'detail/:id',
     component: HeroDetailComponent
+  },
+  {
+    path: 'vinhdaica',
+    component: FormUserComponent
   },
 
 ];

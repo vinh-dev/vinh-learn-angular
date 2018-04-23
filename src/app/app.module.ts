@@ -15,6 +15,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { FormUserComponent } from './form-user/form-user.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    FormUserComponent
   ],
 
   //--module=app tells the CLI to register it in the imports array of the AppModule.
