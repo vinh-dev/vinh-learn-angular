@@ -1,0 +1,17 @@
+
+<form class="form-inline">
+  <div class="form-group">
+    <div class="input-group">
+      <input class="form-control" placeholder="yyyy-mm-dd"
+             name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+      <div class="input-group-addon" (click)="d.toggle()" >
+        <img src="../../favicon.ico" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+      </div>
+    </div>
+  </div>
+</form>
+
+<hr/>
+<pre>Model: {{ model | json }}</pre>
+
+<button (click)="save()">Save</button>

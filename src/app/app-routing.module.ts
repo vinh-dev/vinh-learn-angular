@@ -7,7 +7,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 
 import { HeroDetailComponent } from "./hero-detail/hero-detail.component";
 import { FormUserComponent } from "./form-user/form-user.component";
-
+import { NgbdDatepickerPopup } from "./datepicker-popup/datepicker-popup.component";
 const routes: Routes = [
    // default is dashbroard
    {
@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'vinhdaica',
     component: FormUserComponent
+  },
+  {
+    path: 'datetime',
+    component: NgbdDatepickerPopup
   },
 
 ];

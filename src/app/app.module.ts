@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from "@angular/common/http";
+import {  JsonpModule } from "@angular/http";
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";// hoc HTTP
 import { InMemoryDataService } from "./in-memory-data.service";// hoc HTTP
-
+import{NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
@@ -16,7 +17,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { FormUserComponent } from './form-user/form-user.component';
-
+import { NgbdDatepickerPopup } from './datepicker-popup/datepicker-popup.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormUserComponent } from './form-user/form-user.component';
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
-    FormUserComponent
+    FormUserComponent,
+    NgbdDatepickerPopup,
   ],
 
   //--module=app tells the CLI to register it in the imports array of the AppModule.
@@ -38,7 +40,9 @@ import { FormUserComponent } from './form-user/form-user.component';
 
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    ReactiveFormsModule, JsonpModule, NgbModule.forRoot()
+
   ],
   providers: [
     HeroService,
